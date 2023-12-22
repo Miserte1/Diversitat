@@ -1,19 +1,50 @@
+/* Estilos globales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f8f4; /* Color de fondo verde claro */
+    background-color: #f8faf8; /* Verde claro suave */
 }
 
-header {
-    background-color: #228B22; /* Verde oscuro para el encabezado */
+/* Encabezado con luces */
+#header-with-lights {
+    background-color: #1a4b1a; /* Verde oscuro */
     color: #fff;
     padding: 20px;
     text-align: center;
+    position: relative;
 }
 
-h1 {
+#header-with-lights h1 {
     margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.lights {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.left {
+    left: 0;
+    background-image: url('guirnalda.png'); /* Ajusta la ruta y nombre de tu imagen izquierda */
+}
+
+.right {
+    right: 0;
+    background-image: url('guirnalda.png'); /* Ajusta la ruta y nombre de tu imagen derecha */
+}
+
+/* Navegación y otros estilos... */
+nav {
+    text-align: center;
+    margin-top: 20px;
 }
 
 nav ul {
@@ -27,16 +58,73 @@ nav li {
     margin-right: 20px;
 }
 
+nav a {
+    text-decoration: none;
+    color: #1a4b1a;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 2px solid #1a4b1a;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #1a4b1a;
+    color: #fff;
+}
+
+/* Resto de estilos... */
+
+/* Estilos para el contador */
+#countdown {
+    background-color: black; /* Color de fondo negro */
+    color: #fff; /* Color del texto blanco */
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Fondo de Nieve Animado */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('neu1.gif'); /* Reemplaza 'neu1.gif' con tu imagen de copos de nieve */
+    animation: snowfall 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Contenido */
 section {
     border: 1px solid #ccc;
     padding: 20px;
     margin: 20px;
-    background-color: #fff; /* Fondo blanco para las secciones */
+    background-color: #fff;
+    border-radius: 8px;
 }
 
+
+/* Footer */
 footer {
-    background-color: #228B22; /* Verde oscuro para el pie de página */
+    background-color: #1a4b1a; /* Verde oscuro */
     color: #fff;
-    padding: 10px;
     text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
